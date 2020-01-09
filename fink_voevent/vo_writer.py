@@ -17,7 +17,6 @@ import sys
 import pandas as pd
 
 import voeventparse
-import comet.log as log
 
 import fink_voevent.vo_writer_lib as vo
 
@@ -48,8 +47,8 @@ def handler():
     """
     # Check if the outdir exists
     if not vo.check_dir_exist(EVENTDIR, USEHDFS):
-        log.err("EVENTDIR={} does not exist".format(EVENTDIR))
-        log.err("Create it or edit fink_broker/vo_writer.py")
+        print("EVENTDIR={} does not exist".format(EVENTDIR))
+        print("Create it or edit fink_broker/vo_writer.py")
         sys.exit()
 
     # Read the data from the stdin (string)
